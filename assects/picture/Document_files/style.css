@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+:root {
+    --ntbg: white;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.mnflx {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header.mnflx{
+    margin: 0 4em;
+    user-select: none; 
+}
+.nvwt {
+    width: 630px;
+}
+
+ul.lst_main {
+    width: 465px;
+}
+
+.lst {
+    list-style-type: none;
+    width: fit-content;
+}
+.lsflx{
+    display: flex;
+    justify-content: center;
+}
+
+nav a {
+    color:black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.spwt1 {
+    background-color: orangered;
+    position: absolute;
+    top: 0;
+    width: 0px;
+    height: 2px;
+    transition: width 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) ;
+}
+
+.lst:hover .spwt1{
+    width: 100px;
+}
+.btb4 {
+    width: 64px;
+    margin: auto;
+}
+
+.btbg4 {
+    background-color: var(--ntbg);
+    transition: all cubic-bezier(1, 0, 0, 1);
+
+
+}
+.nt_exe{
+    width: 257px;
+    height: 200px;
+    position: absolute;
+    top: 44px;
+}
+.h2_exe{
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+/* .mnnon{
+    display: none;  Smaller screen
+}
+.nvwt{
+    width: fit-content;
+} */
+.btms{
+    display: none; 
+ 
+}
+
+
+.btbg4:hover,
+.btb6:hover {
+    background-color: orangered;
+    color: white;
+}
+
+.btb4:hover .svtr6 {
+    transform: rotate(180deg);
+    fill: white;
+
+
+}
+
+.svwt1 {
+    background-color: orangered;
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 2px;
+    margin: 0;
+    transition: width 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btb6 {
+    width: 100px;
+    height: 40px;
+    border-radius: 7px;
+    border: 1px solid orangered;
+    color: orangered;
+}
+.lstbdr{
+    border-top: 1px solid #a0a0a04f;
+
+}
+.sp_exe{
+    font-size: 0.8rem;
+    font-weight: 100;
+}

@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+:root {
+    --ntbg: white;
+    --menntbt:orangered;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.manmen {
+    margin-top: 16px;
+    margin-right: 1.2em;
+    display: none;
+}
+
+.mnflx {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mnmar {
+    margin: 0 1.2em;
+    user-select: none;
+}
+
+.nvwt {
+    width: 630px;
+}
+
+ul.lst_main {
+    width: 465px;
+}
+
+.lst {
+    list-style-type: none;
+}
+
+.lsflx {
+    display: flex;
+    justify-content: center;
+}
+
+header a {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.spwt1 {
+    background-color: orangered;
+    position: absolute;
+    top: 0;
+    width: 0px;
+    height: 2px;
+    transition: width 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.lst:hover .spwt1 {
+    width: 100px;
+}
+
+.btb4 {
+    width: 64px;
+    margin: auto;
+}
+
+.btbg4 {
+    background-color: var(--ntbg);
+    transition: all cubic-bezier(1, 0, 0, 1);
+
+
+}
+
+.menlstft {
+    font-size: 1.12rem;
+    align-items: center;
+}
+
+.menlst {
+    width: inherit;
+
+    height: 66px;
+}
+
+.nt_exe {
+    width: 257px;
+    height: 200px;
+    position: absolute;
+    top: 42px;
+}
+
+.h2_exe {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+
+.btms {
+    display: none;
+
+
+}
+
+.skt0 {
+    position: absolute;
+    top: 0;
+    right: 257px;
+    width: 163px;
+}
+
+.skt2 {
+    top: 69px;
+}
+
+.skt3 {
+    top: 142px;
+}
+
+.btbg4:hover,
+.btb6:hover {
+    background-color: orangered;
+    color: white;
+}
+
+.btbg4:hover .bt1 {
+    color: white;
+}
+
+.btb4:hover .svtr6 {
+    transform: rotate(180deg);
+    fill: white;
+
+
+}
+
+.btbg4:hover .svtr6 {
+    transform: rotate(180deg);
+    fill: white;
+
+
+}
+
+.mennt_exe {
+    width: 257px;
+    height: 200px;
+    position: absolute;
+    top: 41px;
+}
+
+.svwt1 {
+    background-color: #ff4500;
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 2px;
+    margin: 0;
+    transition: width 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btb6 {
+    width: 100px;
+    height: 40px;
+    border-radius: 7px;
+    border: 1px solid orangered;
+    color: orangered;
+}
+
+.lstbdr {
+    border: 1px solid #a0a0a04f;
+    justify-content: normal;
+
+}
+
+.sp_exe {
+    font-size: 0.8rem;
+    font-weight: 100;
+}
+
+@media screen and (max-width: 956px) {
+    ul.lst_main.mnflx.mnnon {
+        display: none;
+    }
+
+    .nvwt {
+        width: fit-content;
+    }
+
+    .manmen {
+        display: block;
+    }
+
+}
+
+@media screen and (max-width: 540px) {
+    .mnul {
+        width: 100%;
+
+    }
+
+}
+
+
+
+
+
+.mnul {
+    width: 530px;
+    position: absolute;
+    top: 0;
+    background: white;
+    left: 0;
+    align-items: center;
+}
+
+.bt1 {
+    width: 100px;
+    height: 40px;
+    border-radius: 7px;
+    border: 0px;
+    color:orangered;
+    background-color: transparent;
+}
+
+.mnul {
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.menclses {
+    display: none;
+    transform: translateY(-100%);
+    transition: transform 8.3s ease;
+
+}
+
+.remclz {
+    transform: translateY(0);
+    display: block;
+}
+
+.mnul.active {
+    transform: translateX(0);
+    opacity: 1;
+}
+.ntclkbg{
+    background-color: orangered;
+
+}
+.ntrot{
+    transform: rotate(180deg);
+    fill: white;
+}
+.txtwht{
+    color: white;
+}

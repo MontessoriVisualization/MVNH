@@ -1,0 +1,19 @@
+const click=document.querySelector('.lst3')
+const exeHov= document.querySelector('.nt_exe')
+click.addEventListener('mouseleave', intDis)
+
+function intDis(){
+    exeHov.classList.add('btms');
+    
+}
+
+
+click.addEventListener('mouseenter', exeDis)
+function exeDis(){
+    exeHov.classList.remove('btms');
+
+}
+
+
+
+
