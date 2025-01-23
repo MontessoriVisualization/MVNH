@@ -5,13 +5,13 @@ import { BookMarkedIcon, CalendarDays, NotebookPenIcon } from "lucide-react";
 const CatData = [
   {
     title: "Class 11",
-    features: ["Physic", "Chemistry", "Biology", "Computer"],
+    features: ["Physics", "Chemistry", "Biology", "Computer"],
     icon: <CalendarDays />,
     colors: "bg-blue-100",
   },
   {
     title: "Class 12",
-    features: ["Physic", "Chemistry", "Biology", "Computer"],
+    features: ["Physics", "Chemistry", "Biology", "Computer"],
     icon: <NotebookPenIcon />,
     colors: "bg-green-100",
   },
