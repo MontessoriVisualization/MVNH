@@ -39,11 +39,11 @@ const DropdownItem: React.FC = () => {
           </button>
         </div>
         <li className="p-4 border-b lg:items-center lg:flex relative group justify-center">
-          <span className=" transition-all w-0 group-hover:bg-orange-500 lg:group-hover:w-32 absolute -top-2 h-1 duration-200"></span>
+          <span className=" transition-all w-0 group-hover:bg-orange-500 lg:group-hover:w-32 absolute -top-7 h-1 duration-200"></span>
           <a href="">Home</a>
         </li>
         <li className="p-4 border-b lg:items-center lg:flex relative group justify-center">
-          <span className=" transition-all w-0 group-hover:bg-orange-500 lg:group-hover:w-32 absolute -top-2 h-1 duration-200"></span>
+          <span className=" transition-all w-0 group-hover:bg-orange-500 lg:group-hover:w-32 absolute -top-7 h-1 duration-200"></span>
 
           <a href="#">About</a>
         </li>
@@ -189,7 +189,7 @@ const DropdownItem: React.FC = () => {
 
         <li className="p-4 border-b lg:items-center justify-center lg:flex relative group">
           <a href="#">Help</a>
-          <span className=" transition-all w-0 group-hover:bg-orange-500 lg:group-hover:w-32 absolute -top-2 h-1 duration-200"></span>
+          <span className=" transition-all w-0 group-hover:bg-orange-500 lg:group-hover:w-32 absolute -top-7 h-1 duration-200"></span>
 
           <span></span>
         </li>
