@@ -1,5 +1,6 @@
 {
   "name": "mvhn",
+  "homepage": "https://montessorivisualization.github.io/MVNH/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -7,9 +8,8 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-      "predeploy": "npm run build",
-      "deploy": "gh-pages -d dist",
-  
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -39,6 +39,4 @@
     "typescript-eslint": "^8.18.1",
     "vite": "^6.0.3"
   }
-  
 }
-
