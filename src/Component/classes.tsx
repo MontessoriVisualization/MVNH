@@ -2,6 +2,8 @@ import React from "react";
 import Button from "./button";
 
 interface ClassesProps {
+  title: string;
+  logo: string;
   index: number;
   topic: string;
   subtopic: string[];
