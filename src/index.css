@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --login: #555555;
+  --background: #0e0e0e;
+  --mncolor: orangered;
+  --hello: top;
+  --color: white;
+  --wtkm: white;
+  --mainBackground: white;
+}
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  background-color: var(--mainBackground);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
