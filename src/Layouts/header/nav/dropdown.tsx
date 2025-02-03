@@ -11,6 +11,7 @@ import math from "./navsvg/maths.svg";
 import oldisgold from "./navsvg/oldisgold.svg";
 import { ChevronDown, Menu, X } from "lucide-react";
 import Button from "../../../Component/button";
+import { Link } from "react-router-dom";
 
 const DropdownItem: React.FC = () => {
   const [menuActive, setMenuActive] = useState(false);
@@ -38,10 +39,13 @@ const DropdownItem: React.FC = () => {
             <X className="h-[35px] w-[35px]"></X>
           </button>
         </div>
-        <li className="p-4 border-b lg:items-center lg:flex relative group justify-center">
+        <Link
+          to="/MVNH"
+          className="p-4 border-b lg:items-center lg:flex relative group justify-center"
+        >
           <span className=" transition-all w-0 group-hover:bg-orange-500 lg:group-hover:w-32 absolute -top-7 h-1 duration-200"></span>
           <a href="">Home</a>
-        </li>
+        </Link>
         <li className="p-4 border-b lg:items-center lg:flex relative group justify-center">
           <span className=" transition-all w-0 group-hover:bg-orange-500 lg:group-hover:w-32 absolute -top-7 h-1 duration-200"></span>
 
@@ -132,26 +136,41 @@ const DropdownItem: React.FC = () => {
                 </button>
                 {class12Active && (
                   <ul className="pl-4 lg:absolute lg:top-0 lg:right-60 lg:w-[270px] bg-white">
-                    <li className="flex items-center border-b">
+                    <Link
+                      to="/MVNH/class12maths"
+                      className="flex items-center border-b"
+                    >
                       <img src={math} alt="Math" className="mr-2" />
-                      <span>Class 12 Math</span>
-                    </li>
-                    <li className="flex items-center border-b">
+                      <span>Class 12 Maths</span>
+                    </Link>
+                    <Link
+                      to="/MVNH/class12physics"
+                      className="flex items-center border-b"
+                    >
                       <img src={physic} alt="Physic" className="mr-2" />
-                      <span>Class 12 Physic</span>
-                    </li>
-                    <li className="flex items-center border-b">
+                      <span>Class 12 Physics</span>
+                    </Link>
+                    <Link
+                      to="/MVNH/class12chemistry"
+                      className="flex items-center border-b"
+                    >
                       <img src={chemistry} alt="Chemistry" className="mr-2" />
                       <span>Class 12 Chemistry</span>
-                    </li>
-                    <li className="flex items-center border-b">
+                    </Link>
+                    <Link
+                      to="/MVNH/class12computer"
+                      className="flex items-center border-b"
+                    >
                       <img src={computer} alt="Computer" className="mr-2" />
                       <span>Class 12 Computer</span>
-                    </li>
-                    <li className="flex items-center border-b">
+                    </Link>
+                    <Link
+                      to="/MVNH/class12biology"
+                      className="flex items-center border-b"
+                    >
                       <img src={biology} alt="Biology" className="mr-2" />
                       <span>Class 12 Biology</span>
-                    </li>
+                    </Link>
                   </ul>
                 )}
               </li>

@@ -1,6 +1,6 @@
 import React from "react";
 import { ArrowRight } from "lucide-react";
-import Button from "./button"; // Adjust the import path as necessary
+import Button from "./button";
 
 interface CategoriesProps {
   title: string;
