@@ -44,7 +44,7 @@ const DropdownItem: React.FC = () => {
           className="p-4 border-b lg:items-center lg:flex relative group justify-center"
         >
           <span className=" transition-all w-0 group-hover:bg-orange-500 lg:group-hover:w-32 absolute -top-7 h-1 duration-200"></span>
-          <a href="">Home</a>
+          Home
         </Link>
         <li className="p-4 border-b lg:items-center lg:flex relative group justify-center">
           <span className=" transition-all w-0 group-hover:bg-orange-500 lg:group-hover:w-32 absolute -top-7 h-1 duration-200"></span>
@@ -94,26 +94,41 @@ const DropdownItem: React.FC = () => {
                 </button>
                 {class11Active && (
                   <ul className="pl-4 lg:absolute lg:top-0 lg:right-60 lg:w-[270px] bg-white">
-                    <li className="flex items-center border-b">
+                    <Link
+                      to="/MVNH/class11maths"
+                      className="flex items-center border-b"
+                    >
                       <img src={math} alt="Math" className="mr-2" />
                       <span>Class 11 Math</span>
-                    </li>
-                    <li className="flex items-center border-b">
+                    </Link>
+                    <Link
+                      to="/MVNH/class11physic"
+                      className="flex items-center border-b"
+                    >
                       <img src={physic} alt="Physic" className="mr-2" />
                       <span>Class 11 Physic</span>
-                    </li>
-                    <li className="flex items-center border-b">
+                    </Link>
+                    <Link
+                      to="/MVNH/class11chemistry"
+                      className="flex items-center border-b"
+                    >
                       <img src={chemistry} alt="Chemistry" className="mr-2" />
                       <span>Class 11 Chemistry</span>
-                    </li>
-                    <li className="flex items-center border-b">
+                    </Link>
+                    <Link
+                      to="/MVNH/class11computer"
+                      className="flex items-center border-b"
+                    >
                       <img src={computer} alt="Computer" className="mr-2" />
                       <span>Class 11 Computer</span>
-                    </li>
-                    <li className="flex items-center border-b">
+                    </Link>
+                    <Link
+                      to="/MVNH/class11biology"
+                      className="flex items-center border-b"
+                    >
                       <img src={biology} alt="Biology" className="mr-2" />
                       <span>Class 11 Biology</span>
-                    </li>
+                    </Link>
                   </ul>
                 )}
               </li>

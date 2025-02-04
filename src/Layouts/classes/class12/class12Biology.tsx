@@ -1,0 +1,96 @@
+import React from "react";
+import { BookMarkedIcon } from "lucide-react";
+import Class from "../../../Component/classes";
+import Biology12 from "./Biology12.png";
+
+const Class12Biology: React.FC = () => {
+  const Classdata = {
+    title: "Basic Biology Class11",
+    writer:
+      "A comprehensive note of basic Biology for class 11 students by MVNH",
+    chapters: [
+      "Plant Anatomy",
+      "Plant Physiology",
+      "Genetics",
+      "Embryology",
+      "Biotechnology",
+      "Animal Tissues",
+      "Development Biology",
+      "Human Biology",
+      "Human Population and Health Disorders",
+      "Applied Biology",
+    ],
+    icon: <BookMarkedIcon className="size-7" />,
+    sub: [
+      ["Plant anatomy"],
+      [
+        "Water relation",
+        "Photosynthesis",
+        "Respiration",
+        "Plant hormones",
+        "Plant growth and movement",
+      ],
+      [
+        "Genetic Materials",
+        "Mendelian genetics",
+        "Linkage and crossing over",
+        "Mutation and polyploidy",
+      ],
+      ["Embryology"],
+      ["Biotechnology"],
+      ["Introduction; Types of animal tissues"],
+      ["Gametogenesis", "Development of frog"],
+      [
+        "Digestive System",
+        "Respiratory System",
+        "Circulatory System",
+        "Excretory System",
+        "Nervous System",
+        "Sense Organs",
+        "Endocrinology",
+        "Reproductive System",
+      ],
+      ["Human Population", "Health Disorders"],
+      [
+        "Application of Zoology",
+        "Microbial diseases and application of microbiology",
+      ],
+    ],
+    picture: Biology12,
+    pageno: [
+      ["1-40", "41-88", "89-136"],
+      [
+        "137-144",
+        "145-152",
+        "153-160",
+        "161-168",
+        "169-176",
+        "177-184",
+        "185-192",
+        "193-200",
+      ],
+      ["201-208", "209-216", "217-224"],
+      ["225-232", "233-240", "241-248"],
+      ["249-256", "257-264"],
+      ["265-272"],
+      ["273-280", "281-288", "289-296", "297-304"],
+      ["305-312", "313-320", "321-328", "329-336"],
+      ["337-344", "345-352", "353-360"],
+      ["361-368", "369-376"],
+    ],
+  };
+
+  return (
+    <Class
+      title={Classdata.title}
+      sub={Classdata.sub}
+      chapters={Classdata.chapters}
+      icon={Classdata.icon}
+      writer={Classdata.writer}
+      pageno={Classdata.pageno}
+      picture={Classdata.picture}
+    />
+  );
+};
+
+export default Class12Biology;
