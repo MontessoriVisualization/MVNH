@@ -14,7 +14,7 @@ const Example: React.FC = () => {
       "Electricity and Magnetism",
       "Modern Physic",
     ],
-    icon: <BookMarkedIcon className="size-7" />,
+    icon: <BookMarkedIcon className="size-fit" />,
     sub: [
       ["Rotational Dynamics", "Perodic Motion", "Fluid Statics"],
       ["First Law of Thermodynamics", "Second law of Thermodynamics"],

@@ -20,7 +20,7 @@ const Class12Biology: React.FC = () => {
       "Human Population and Health Disorders",
       "Applied Biology",
     ],
-    icon: <BookMarkedIcon className="size-7" />,
+    icon: <BookMarkedIcon className="size-fit" />,
     sub: [
       ["Plant anatomy"],
       [

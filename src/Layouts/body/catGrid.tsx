@@ -27,7 +27,7 @@ const CatGrid: React.FC = () => {
   console.log("Rendering CatGrid with data:", CatData);
 
   return (
-    <div className="container mx-auto m-7 my-16 ">
+    <div className="container mx-auto px-7 my-16 ">
       <div className="text-center mb-9">
         <h2 className="text-3xl font-bold my-2">
           Notes And Question Bank Catagories

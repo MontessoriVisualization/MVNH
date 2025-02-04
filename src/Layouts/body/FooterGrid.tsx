@@ -49,8 +49,8 @@ const FooterGrid: React.FC = () => {
   console.log("Rendering FooterGrid with data:", FooterData);
 
   return (
-    <div className="flex flex-col mt-12 px-14 pt-9 pb-4 justify-center gap-4 bg-[#192733] overflow-hidden">
-      <div className="p-4 w-full flex flex-col lg:flex-row gap-20 justify-center">
+    <div className="flex flex-col mt-12 px-14 pt-9 pb-4 justify-center gap-4 bg-[#192733]">
+      <div className="p-4 w-full hidden md:flex flex-col lg:flex-row gap-20 justify-center">
         {FooterData.map((FooterProps, index) => (
           <Footer
             key={index}

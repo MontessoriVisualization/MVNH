@@ -2,7 +2,7 @@ import Button from "../../Component/button";
 import hello from "./hello.webp";
 const Hero: React.FC = () => {
   return (
-    <div className="flex flex-col md:flex-row md:justify-around items-center p-7 mb-9">
+    <div className="flex flex-col md:flex-row md:justify-around items-center container mx-auto p-7 mb-9">
       <div className="px-9 my-6 md:w-2/5 w-full">
         <div>
           <span className="bg-light-orange text-Wht text-sm px-1 py-2 rounded flex w-max my-4">

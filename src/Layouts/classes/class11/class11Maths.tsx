@@ -27,7 +27,7 @@ const classData: ClassData = {
     "Computational Methods",
     "Mechanics",
   ],
-  icon: <BookMarkedIcon className="size-7" />,
+  icon: <BookMarkedIcon className=" size-fit" />,
   sub: [
     [
       "Logic, Sets and Real Number System",

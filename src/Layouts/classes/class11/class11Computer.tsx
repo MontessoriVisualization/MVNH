@@ -17,7 +17,7 @@ const class11Computer: React.FC = () => {
       "Multimedia",
       "Information Security and Cyber Law",
     ],
-    icon: <BookMarkedIcon className="size-7" />,
+    icon: <BookMarkedIcon className="size-fit" />,
     sub: [],
 
     picture: Computer11,

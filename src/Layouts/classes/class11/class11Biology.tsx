@@ -20,7 +20,7 @@ const Class11Biology: React.FC = () => {
       "Biota and Environment",
       "Conservation Biology",
     ],
-    icon: <BookMarkedIcon className="size-7" />,
+    icon: <BookMarkedIcon className="size-fit" />,
     sub: [
       ["Biomolecules", "Cell", "Cell division"],
       [

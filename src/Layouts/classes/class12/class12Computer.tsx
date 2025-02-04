@@ -16,7 +16,7 @@ const class12Chemistry: React.FC = () => {
       "Software process model",
       "Recent trends in Technology",
     ],
-    icon: <BookMarkedIcon className="size-7" />,
+    icon: <BookMarkedIcon className="size-fit" />,
     sub: [],
 
     picture: Maths12,

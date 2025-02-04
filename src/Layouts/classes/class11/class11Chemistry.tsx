@@ -13,7 +13,7 @@ const class11Chemistry: React.FC = () => {
       "Inorganic Chemistry",
       "Organic Chemistry",
     ],
-    icon: <BookMarkedIcon className="size-7" />,
+    icon: <BookMarkedIcon className="size-fit" />,
     sub: [
       // General and Physical Chemistry
       [

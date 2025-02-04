@@ -14,7 +14,7 @@ const Example: React.FC = () => {
       "Electricity",
       "Modern Physics",
     ],
-    icon: <BookMarkedIcon className="size-7" />,
+    icon: <BookMarkedIcon className="size-fit" />,
     sub: [
       // Mechanics
       [

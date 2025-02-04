@@ -13,7 +13,7 @@ const List: React.FC<CategoriesProps> = ({ title, icon, features, colors }) => {
     <div className="flex items-center justify-between border m-4">
       <div>
         <div className="text-2xl font-bold my-3">{title}</div>
-        <div className="grid grid-cols-3 my-3">
+        <div className="grid lg:grid-cols-3  grid-cols-2 my-3">
           {features.map((feature, index) => (
             <button
               key={index}

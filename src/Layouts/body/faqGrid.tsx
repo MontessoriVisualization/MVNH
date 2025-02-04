@@ -42,7 +42,7 @@ const FaqGrid: React.FC = () => {
   };
 
   return (
-    <div className="mx-14">
+    <div className="mx-auto m-7 my-16 container">
       <div className="p-7 text-3xl font-bold border-l-8 border-orange-500 bg-orange-100">
         Frequently Asked Questions
       </div>

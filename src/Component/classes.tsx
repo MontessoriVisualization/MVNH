@@ -37,7 +37,7 @@ const List: React.FC<CategoriesProps> = ({
   };
 
   return (
-    <div className="w-4/5 m-auto gap-6 flex flex-col">
+    <div className="w-4/5 m-auto gap-6 flex flex-col ">
       <nav aria-label="breadcrumb" className="flex gap-2 text-lg">
         <span className="flex gap-2">
           <ChevronRight aria-hidden="true" />
@@ -48,17 +48,19 @@ const List: React.FC<CategoriesProps> = ({
           {title}
         </span>
       </nav>
-      <div className="flex gap-4">
-        <div className="flex items-center flex-col w-2/12 px-3">
+      <div className="flex gap-4 md:flex-row flex-col">
+        <div className="flex items-center md:flex-col md:w-2/12 gap-6 w-full px-3">
           <img
             src={picture}
             alt={`Cover for ${title}`}
-            className="px-4 rounded-2xl bg-gray-100 py-6"
+            className="px-4 w-32 rounded-2xl bg-gray-100 py-6"
           />
-          <h1 className="text-xl font-medium">{title}</h1>
-          <span className="text-sm text-gray-500">{writer}</span>
+          <div>
+            <h1 className=" text-2xl md:text-xl font-medium">{title}</h1>
+            <span className="text-sm text-gray-500">{writer}</span>
+          </div>
         </div>
-        <div className="w-5/6">
+        <div className="md:w-5/6 w-full">
           <h2>Chapters</h2>
           <ul>
             {chapters.map((chapter, chapterIndex) => (
@@ -71,7 +73,7 @@ const List: React.FC<CategoriesProps> = ({
                   aria-expanded={openChapters.has(chapterIndex)}
                   aria-controls={`chapter-${chapterIndex}-content`}
                 >
-                  <div className="text-xl font-medium justify-between flex h-16 items-center">
+                  <div className="text-base md:text-xl font-medium justify-between flex h-16 items-center">
                     <div className="flex gap-2">
                       {icon}
                       {chapterIndex + 1}. {chapter}
@@ -99,7 +101,7 @@ const List: React.FC<CategoriesProps> = ({
                     {sub[chapterIndex]?.map((subItem, subIndex) => (
                       <Link
                         to={`/chapter/${chapterIndex + 1}/${subIndex + 1}`}
-                        className="flex mb-1 font-medium text-lg justify-between hover:text-blue-600"
+                        className=" text-sm flex mb-1 font-medium md:text-lg justify-between hover:text-blue-600"
                         key={subIndex}
                       >
                         <span>

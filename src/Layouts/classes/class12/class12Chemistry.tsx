@@ -14,7 +14,7 @@ const class12Chemistry: React.FC = () => {
       "Organic Chemistry",
       "Applied Chemistry",
     ],
-    icon: <BookMarkedIcon className="size-7" />,
+    icon: <BookMarkedIcon className="size-fit" />,
     sub: [
       [
         "Volumetric Analysis",

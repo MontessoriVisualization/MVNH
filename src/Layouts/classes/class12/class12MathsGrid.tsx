@@ -17,7 +17,7 @@ const Example: React.FC = () => {
       "Calculus",
       "Computational Methods",
     ],
-    icon: <BookMarkedIcon className="size-7" />,
+    icon: <BookMarkedIcon className="size-fit" />,
     sub: [
       [
         "Permutation & Combination",
