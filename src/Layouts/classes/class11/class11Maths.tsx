@@ -4,8 +4,12 @@ import Class from "../../../Component/classes";
 import Math11 from "./Maths11.png";
 
 interface ClassData {
+  ClassLink: string;
+  Class: string;
   title: string;
   writer: string;
+  Links: string[][];
+
   chapters: string[];
   icon: React.ReactNode;
   sub: string[][];
@@ -14,6 +18,50 @@ interface ClassData {
 }
 
 const classData: ClassData = {
+  Class: "class11",
+  ClassLink: "/class11",
+  Links: [
+    [
+      "https://drive.google.com/file/d/1M5N9_h9KD7UmXC4Z7g1DPeJkmfGGDUNP/preview",
+      "https://drive.google.com/file/d/1M5N9_h9KD7UmXC4Z7g1DPeJkmfGGDUNP/preview",
+      "https://drive.google.com/file/d/1M5N9_h9KD7UmXC4Z7g1DPeJkmfGGDUNP/preview",
+      "https://drive.google.com/file/d/1M5N9_h9KD7UmXC4Z7g1DPeJkmfGGDUNP/preview",
+      "https://drive.google.com/file/d/1M5N9_h9KD7UmXC4Z7g1DPeJkmfGGDUNP/preview",
+      "https://drive.google.com/file/d/1M5N9_h9KD7UmXC4Z7g1DPeJkmfGGDUNP/preview",
+      "https://drive.google.com/file/d/1M5N9_h9KD7UmXC4Z7g1DPeJkmfGGDUNP/preview",
+      "https://drive.google.com/file/d/1M5N9_h9KD7UmXC4Z7g1DPeJkmfGGDUNP/preview",
+    ],
+    [
+      "https://drive.google.com/file/d/1M5N9_h9KD7UmXC4Z7g1DPeJkmfGGDUNP/preview",
+      "https://drive.google.com/file/d/1M5N9_h9KD7UmXC4Z7g1DPeJkmfGGDUNP/preview",
+      "https://drive.google.com/file/d/1M5N9_h9KD7UmXC4Z7g1DPeJkmfGGDUNP/preview",
+      "https://drive.google.com/file/d/1M5N9_h9KD7UmXC4Z7g1DPeJkmfGGDUNP/preview",
+      "https://drive.google.com/file/d/1M5N9_h9KD7UmXC4Z7g1DPeJkmfGGDUNP/preview",
+      "https://drive.google.com/file/d/1M5N9_h9KD7UmXC4Z7g1DPeJkmfGGDUNP/preview",
+      "https://drive.google.com/file/d/1M5N9_h9KD7UmXC4Z7g1DPeJkmfGGDUNP/preview",
+      "https://drive.google.com/file/d/1M5N9_h9KD7UmXC4Z7g1DPeJkmfGGDUNP/preview",
+    ],
+    [
+      "https://drive.google.com/file/d/1M5N9_h9KD7UmXC4Z7g1DPeJkmfGGDUNP/preview",
+      "https://drive.google.com/file/d/1M5N9_h9KD7UmXC4Z7g1DPeJkmfGGDUNP/preview",
+      "https://drive.google.com/file/d/1M5N9_h9KD7UmXC4Z7g1DPeJkmfGGDUNP/preview",
+      "https://drive.google.com/file/d/1M5N9_h9KD7UmXC4Z7g1DPeJkmfGGDUNP/preview",
+      "https://drive.google.com/file/d/1M5N9_h9KD7UmXC4Z7g1DPeJkmfGGDUNP/preview",
+      "https://drive.google.com/file/d/1M5N9_h9KD7UmXC4Z7g1DPeJkmfGGDUNP/preview",
+      "https://drive.google.com/file/d/1M5N9_h9KD7UmXC4Z7g1DPeJkmfGGDUNP/preview",
+      "https://drive.google.com/file/d/1M5N9_h9KD7UmXC4Z7g1DPeJkmfGGDUNP/preview",
+    ],
+    [
+      "https://drive.google.com/file/d/1M5N9_h9KD7UmXC4Z7g1DPeJkmfGGDUNP/preview",
+      "https://drive.google.com/file/d/1M5N9_h9KD7UmXC4Z7g1DPeJkmfGGDUNP/preview",
+      "https://drive.google.com/file/d/1M5N9_h9KD7UmXC4Z7g1DPeJkmfGGDUNP/preview",
+      "https://drive.google.com/file/d/1M5N9_h9KD7UmXC4Z7g1DPeJkmfGGDUNP/preview",
+      "https://drive.google.com/file/d/1M5N9_h9KD7UmXC4Z7g1DPeJkmfGGDUNP/preview",
+      "https://drive.google.com/file/d/1M5N9_h9KD7UmXC4Z7g1DPeJkmfGGDUNP/preview",
+      "https://drive.google.com/file/d/1M5N9_h9KD7UmXC4Z7g1DPeJkmfGGDUNP/preview",
+      "https://drive.google.com/file/d/1M5N9_h9KD7UmXC4Z7g1DPeJkmfGGDUNP/preview",
+    ],
+  ],
   title: "Basic Mathematics Class11",
   writer:
     "A comprehensive note of basic mathematics for class 11 students by MVNH",
@@ -67,6 +115,9 @@ const classData: ClassData = {
 const Class11Maths: React.FC = () => {
   return (
     <Class
+      Links={classData.Links}
+      ClassLink={classData.ClassLink}
+      Class={classData.Class}
       title={classData.title}
       sub={classData.sub}
       chapters={classData.chapters}

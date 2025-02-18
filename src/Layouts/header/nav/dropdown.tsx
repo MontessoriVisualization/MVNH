@@ -92,6 +92,7 @@ const DropdownItem: React.FC = () => {
                     </span>
                   </div>
                 </button>
+
                 {class11Active && (
                   <ul className="pl-4 lg:absolute lg:top-0 lg:right-60 lg:w-[270px] bg-white">
                     <Link
@@ -149,6 +150,7 @@ const DropdownItem: React.FC = () => {
                     </span>
                   </div>
                 </button>
+
                 {class12Active && (
                   <ul className="pl-4 lg:absolute lg:top-0 lg:right-60 lg:w-[270px] bg-white">
                     <Link

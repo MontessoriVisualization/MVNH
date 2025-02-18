@@ -49,7 +49,7 @@ const FooterGrid: React.FC = () => {
   console.log("Rendering FooterGrid with data:", FooterData);
 
   return (
-    <div className="flex flex-col mt-12 px-14 pt-9 pb-4 justify-center gap-4 bg-[#192733]">
+    <div className="flex-col mt-12 px-14 pt-9 pb-4 justify-center gap-4 bg-[#192733]">
       <div className="p-4 w-full hidden md:flex flex-col lg:flex-row gap-20 justify-center">
         {FooterData.map((FooterProps, index) => (
           <Footer
@@ -87,7 +87,7 @@ const FooterGrid: React.FC = () => {
           <img src={Logo} alt="" className="text-green-300 fill-white" />
 
           <span className="text-sm font-bold text-gray-400">
-            Copyright © 2021 MVHN,Inc
+            Copyright© {new Date().getFullYear()} MVHN,Inc
           </span>
         </div>
       </div>

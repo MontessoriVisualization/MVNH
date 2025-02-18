@@ -15,6 +15,8 @@ import "./index.css";
 import App from "./App";
 import Header from "./Layouts/header/Header";
 import Class11Biology from "./Layouts/classes/class11/class11Biology";
+import Class11 from "./Layouts/classes/class11/ClassesMain";
+import Class12 from "./Layouts/classes/class12/Class12grid";
 
 const router = createBrowserRouter([
   {
@@ -103,6 +105,22 @@ const router = createBrowserRouter([
     element: (
       <>
         <Header /> <Class11Biology></Class11Biology>
+      </>
+    ),
+  },
+  {
+    path: "/MVNH/class11",
+    element: (
+      <>
+        <Header /> <Class11></Class11>
+      </>
+    ),
+  },
+  {
+    path: "/MVNH/class12",
+    element: (
+      <>
+        <Header /> <Class12></Class12>
       </>
     ),
   },

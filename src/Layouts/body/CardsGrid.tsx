@@ -47,7 +47,7 @@ const CardsGrid: React.FC = () => {
   console.log("Rendering CardsGrid with data:", cardsData);
 
   return (
-    <div className="container mx-auto px-7 py-5 mb-9">
+    <div className="mx-auto px-7 py-5 mb-9">
       <div className="text-center mb-9">
         <h2 className="text-3xl font-bold my-2">
           Our Features and upcomming features
