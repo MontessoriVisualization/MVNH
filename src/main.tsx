@@ -20,7 +20,7 @@ import Class11Biology from "./Layouts/classes/class11/class11Biology";
 import Class11 from "./Layouts/classes/class11/ClassesMain";
 import Class12 from "./Layouts/classes/class12/Class12grid";
 import Profile from "./Component/profile";
-import Compiler from "./Layouts/programing/webtechnology/compiler";
+import Codexe from "./Layouts/programing/webtechnology/compiler";
 
 const router = createBrowserRouter(
   [
@@ -168,8 +168,12 @@ const router = createBrowserRouter(
       ),
     },
     {
-      path: "/codex",
-      element: <Compiler></Compiler>,
+      path: "/fos",
+      element: (
+        <>
+          <Codexe />
+        </>
+      ),
     },
   ],
   {
