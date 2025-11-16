@@ -19,7 +19,7 @@ const Example: React.FC = () => {
     ],
     icon: <BookMarkedIcon className="size-fit" />,
     sub: [
-      ["Rotational Dynamics fuck", "Perodic Motion", "Fluid Statics"],
+      ["Rotational Dynamics fucker", "Perodic Motion", "Fluid Statics"],
       ["First Law of Thermodynamics", "Second law of Thermodynamics"],
       [
         "Wave and Wave Motion",
