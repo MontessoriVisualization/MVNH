@@ -1,0 +1,35 @@
+===============================================================================
+GOOGLE DRIVE CONNECTION FILES - QUICK REFERENCE
+===============================================================================
+
+FILE WITH GOOGLE DRIVE CONNECTIONS:
+-----------------------------------
+/assets/index-qGsR9eGM.js
+
+
+GOOGLE DRIVE URLS FOUND:
+-------------------------
+
+1. https://drive.google.com/file/d/1v1-VHUG6GV-An0PKV8obHamTq-c4hz0i/preview
+
+2. https://drive.google.com/file/d/1M5N9_h9KD7UmXC4Z7g1DPeJkmfGGDUNP/preview
+
+3. https://drive.google.com/file/d/1o4gssCXW3kZIsxV099TVhgAQtTiSEhR2/preview
+
+
+GOOGLE API ENDPOINTS USED:
+--------------------------
+- identitytoolkit.googleapis.com (Firebase Auth)
+- staging-identitytoolkit.sandbox.googleapis.com (Firebase Auth Staging)
+- test-identitytoolkit.sandbox.googleapis.com (Firebase Auth Test)
+
+
+NOTES:
+------
+- All Google Drive URLs use the /preview endpoint for embedding
+- The file is a minified/compiled JavaScript bundle
+- To modify these URLs, access the source code repository
+- The website appears to be built with Vite
+- Firebase Authentication is integrated (uses Google APIs)
+
+===============================================================================
