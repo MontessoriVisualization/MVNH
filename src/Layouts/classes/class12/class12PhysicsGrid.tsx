@@ -67,7 +67,7 @@ const Example: React.FC = () => {
     ],
     Links: [
       [
-        "https://drive.google.com/file/d/1v1-VHUG6GV-An0PKV8obHamTq-c4hz0i/preview",
+        "https://drive.google.com/file/d/1FYyWWjn_lJPYmQswoxrywQBzRI1S_tFC/preview",
         "https://drive.google.com/file/d/1v1-VHUG6GV-An0PKV8obHamTq-c4hz0i/preview",
         "https://drive.google.com/file/d/1v1-VHUG6GV-An0PKV8obHamTq-c4hz0i/preview",
         "https://drive.google.com/file/d/1v1-VHUG6GV-An0PKV8obHamTq-c4hz0i/preview",
