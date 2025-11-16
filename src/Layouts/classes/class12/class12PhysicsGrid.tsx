@@ -19,7 +19,7 @@ const Example: React.FC = () => {
     ],
     icon: <BookMarkedIcon className="size-fit" />,
     sub: [
-      ["Rotational Dynamics", "Perodic Motion", "Fluid Statics"],
+      ["Rotational Dynamics fuck", "Perodic Motion", "Fluid Statics"],
       ["First Law of Thermodynamics", "Second law of Thermodynamics"],
       [
         "Wave and Wave Motion",
@@ -69,15 +69,7 @@ const Example: React.FC = () => {
       [
         "https://drive.google.com/file/d/1FYyWWjn_lJPYmQswoxrywQBzRI1S_tFC/preview",
 "https://drive.google.com/file/d/1FYyWWjn_lJPYmQswoxrywQBzRI1S_tFC/preview",
-        "https://drive.google.com/file/d/1v1-VHUG6GV-An0PKV8obHamTq-c4hz0i/preview",
-        "https://drive.google.com/file/d/1v1-VHUG6GV-An0PKV8obHamTq-c4hz0i/preview",
-        "https://drive.google.com/file/d/1v1-VHUG6GV-An0PKV8obHamTq-c4hz0i/preview",
-        "https://drive.google.com/file/d/1v1-VHUG6GV-An0PKV8obHamTq-c4hz0i/preview",
-        "https://drive.google.com/file/d/1v1-VHUG6GV-An0PKV8obHamTq-c4hz0i/preview",
-        "https://drive.google.com/file/d/1v1-VHUG6GV-An0PKV8obHamTq-c4hz0i/preview",
-        "https://drive.google.com/file/d/1v1-VHUG6GV-An0PKV8obHamTq-c4hz0i/preview",
-        "https://drive.google.com/file/d/1v1-VHUG6GV-An0PKV8obHamTq-c4hz0i/preview",
-        "https://drive.google.com/file/d/1v1-VHUG6GV-An0PKV8obHamTq-c4hz0i/preview",
+       
       ],
       [
         "https://drive.google.com/file/d/1v1-VHUG6GV-An0PKV8obHamTq-c4hz0i/preview",
