@@ -8,11 +8,31 @@ The website uses Google Drive to host and embed preview content. All Google Driv
 
 ## Files Containing Google Drive References
 
-### 1. `/assets/index-qGsR9eGM.js`
+### Source Files (TypeScript/React)
+
+The following source files contain Google Drive URLs in their class data structures:
+
+**Class 11 Files:**
+1. `/src/Layouts/classes/class11/class11Biology.tsx`
+2. `/src/Layouts/classes/class11/class11Chemistry.tsx`
+3. `/src/Layouts/classes/class11/class11Computer.tsx`
+4. `/src/Layouts/classes/class11/class11Maths.tsx`
+5. `/src/Layouts/classes/class11/class11Physic.tsx`
+
+**Class 12 Files:**
+6. `/src/Layouts/classes/class12/class12Biology.tsx`
+7. `/src/Layouts/classes/class12/class12Chemistry.tsx`
+8. `/src/Layouts/classes/class12/class12Computer.tsx`
+9. `/src/Layouts/classes/class12/class12MathsGrid.tsx`
+10. `/src/Layouts/classes/class12/class12PhysicsGrid.tsx`
+
+### Compiled/Deployed File
+
+**1. `/assets/index-qGsR9eGM.js`**
 
 **Type:** Compiled JavaScript Bundle (Minified)
 
-**Purpose:** Main application JavaScript containing all the business logic and component code for the website.
+**Purpose:** Main application JavaScript containing all the business logic and component code for the website compiled from the source files above.
 
 **Google Drive Integration:**
 
@@ -52,9 +72,27 @@ The Google Drive files are embedded using the `/preview` endpoint, which allows:
 - Preview functionality without requiring download
 - Public or shared link access to the files
 
-### Code Location
+### Code Structure
 
-Since the code is minified and bundled, the actual source code that references these Google Drive URLs would be in the original React/JavaScript source files before compilation. The build process (likely using Vite based on the references in `index.html`) bundles all source files into `assets/index-qGsR9eGM.js`.
+Each class component file (e.g., `class12PhysicsGrid.tsx`) contains:
+- A `Classdata` object with course information
+- A `Links` array containing Google Drive preview URLs for each chapter and sub-chapter
+- The URLs are embedded in nested arrays corresponding to the course structure
+
+**Example structure:**
+```typescript
+const Classdata = {
+  title: "Physics 12",
+  chapters: ["Mechanics", "Heat and Thermodynamics", ...],
+  Links: [
+    ["url1", "url2", ...],  // Links for chapter 1
+    ["url3", "url4", ...],  // Links for chapter 2
+    ...
+  ]
+}
+```
+
+The build process (using Vite) compiles these source files into `assets/index-qGsR9eGM.js`.
 
 ## Files NOT Containing Google Drive References
 
@@ -82,14 +120,36 @@ The following files were checked but do NOT contain Google Drive connections:
 
 ## How to Update Google Drive Links
 
-1. Locate the source code repository (not just the deployed `gh-pages` branch)
-2. Search for the Google Drive URLs in the source files:
-   ```bash
-   grep -r "drive.google.com" src/
-   ```
-3. Update the URLs as needed
-4. Rebuild the project
-5. Deploy the updated build to the `gh-pages` branch
+### Step 1: Locate the Source File
+Find the appropriate class file in the source repository:
+- Class 11: `/src/Layouts/classes/class11/`
+- Class 12: `/src/Layouts/classes/class12/`
+
+### Step 2: Edit the Links Array
+Update the Google Drive URLs in the `Links` array within the `Classdata` object:
+```typescript
+Links: [
+  [
+    "https://drive.google.com/file/d/NEW_FILE_ID/preview",
+    "https://drive.google.com/file/d/ANOTHER_FILE_ID/preview",
+    ...
+  ],
+  ...
+]
+```
+
+### Step 3: Rebuild and Deploy
+```bash
+# Install dependencies
+npm install
+
+# Build the project
+npm run build
+
+# Deploy to gh-pages or your hosting platform
+```
+
+The build process will compile the updated source files into new asset bundles.
 
 ---
 

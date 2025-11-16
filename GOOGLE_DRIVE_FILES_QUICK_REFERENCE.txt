@@ -2,9 +2,25 @@
 GOOGLE DRIVE CONNECTION FILES - QUICK REFERENCE
 ===============================================================================
 
-FILE WITH GOOGLE DRIVE CONNECTIONS:
------------------------------------
-/assets/index-qGsR9eGM.js
+SOURCE FILES WITH GOOGLE DRIVE CONNECTIONS:
+--------------------------------------------
+Class 11:
+  /src/Layouts/classes/class11/class11Biology.tsx
+  /src/Layouts/classes/class11/class11Chemistry.tsx
+  /src/Layouts/classes/class11/class11Computer.tsx
+  /src/Layouts/classes/class11/class11Maths.tsx
+  /src/Layouts/classes/class11/class11Physic.tsx
+
+Class 12:
+  /src/Layouts/classes/class12/class12Biology.tsx
+  /src/Layouts/classes/class12/class12Chemistry.tsx
+  /src/Layouts/classes/class12/class12Computer.tsx
+  /src/Layouts/classes/class12/class12MathsGrid.tsx
+  /src/Layouts/classes/class12/class12PhysicsGrid.tsx
+
+COMPILED FILE:
+--------------
+/assets/index-qGsR9eGM.js (minified bundle)
 
 
 GOOGLE DRIVE URLS FOUND:
@@ -27,9 +43,10 @@ GOOGLE API ENDPOINTS USED:
 NOTES:
 ------
 - All Google Drive URLs use the /preview endpoint for embedding
-- The file is a minified/compiled JavaScript bundle
-- To modify these URLs, access the source code repository
-- The website appears to be built with Vite
+- URLs are stored in the 'Links' array within each component's Classdata object
+- Source files are TypeScript React (.tsx) components
+- To modify URLs, edit the source files and rebuild with 'npm run build'
+- The website is built with Vite (React + TypeScript)
 - Firebase Authentication is integrated (uses Google APIs)
 
 ===============================================================================
