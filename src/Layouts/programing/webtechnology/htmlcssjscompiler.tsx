@@ -1,4 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "@/firebase.config";
+import { loadHtmlCssJs, saveHtmlCssJs, loadLocalHtmlCssJs, saveLocalHtmlCssJs } from "@/lib/persistence";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import Editor from "@monaco-editor/react";
 import type { editor } from "monaco-editor";
@@ -62,6 +65,9 @@ console.log("Script loaded successfully!");`);
   const [chatInput, setChatInput] = useState("");
   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
   const previewWindowRef = useRef<Window | null>(null);
+  const [userId, setUserId] = useState<string | null>(null);
+  const [isSaving, setIsSaving] = useState(false);
+  const [lastSavedAt, setLastSavedAt] = useState<Date | null>(null);
 
   const generateSrcDoc = () => {
     let bodyContent = htmlCode;
@@ -88,6 +94,53 @@ console.log("Script loaded successfully!");`);
     debouncedUpdate();
     return () => debouncedUpdate.cancel();
   }, [htmlCode, cssCode, jsCode, isDark]);
+
+  // Auth state & initial load
+  useEffect(() => {
+    const unsub = onAuthStateChanged(auth, async (user) => {
+      setUserId(user ? user.uid : null);
+      if (user) {
+        const remote = await loadHtmlCssJs(user.uid);
+        if (remote) {
+          setHtmlCode(remote.html);
+          setCssCode(remote.css);
+          setJsCode(remote.js);
+        } else {
+          const local = loadLocalHtmlCssJs();
+          if (local) {
+            setHtmlCode(local.html);
+            setCssCode(local.css);
+            setJsCode(local.js);
+          }
+        }
+      } else {
+        const local = loadLocalHtmlCssJs();
+        if (local) {
+          setHtmlCode(local.html);
+          setCssCode(local.css);
+          setJsCode(local.js);
+        }
+      }
+    });
+    return () => unsub();
+  }, []);
+
+  // Debounced autosave (2s inactivity)
+  useEffect(() => {
+    const handle = setTimeout(async () => {
+      const payload = { html: htmlCode, css: cssCode, js: jsCode };
+      if (userId) {
+        setIsSaving(true);
+        await saveHtmlCssJs(userId, payload);
+        setIsSaving(false);
+        setLastSavedAt(new Date());
+      } else {
+        saveLocalHtmlCssJs(payload);
+        setLastSavedAt(new Date());
+      }
+    }, 2000);
+    return () => clearTimeout(handle);
+  }, [htmlCode, cssCode, jsCode, userId]);
 
   useEffect(() => {
     if (isFullScreen && !isPreviewOpen) {
@@ -150,7 +203,7 @@ ${extractedBody}
     dl("script.js", jsCode, "application/javascript");
   };
 
-  // Ctrl+S to save and run (refresh preview)
+  // Ctrl+S to manual save & refresh preview immediately
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
       if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "s") {
@@ -162,6 +215,18 @@ ${extractedBody}
           previewWindowRef.current.document.write(doc);
           previewWindowRef.current.document.close();
         }
+        const payload = { html: htmlCode, css: cssCode, js: jsCode };
+        (async () => {
+          if (userId) {
+            setIsSaving(true);
+            await saveHtmlCssJs(userId, payload);
+            setIsSaving(false);
+            setLastSavedAt(new Date());
+          } else {
+            saveLocalHtmlCssJs(payload);
+            setLastSavedAt(new Date());
+          }
+        })();
       }
     };
     window.addEventListener("keydown", handler);
@@ -283,6 +348,9 @@ ${extractedBody}
           <button className={`px-3 py-1 rounded mr-2 mb-2 ${isDark ? "bg-purple-400 hover:bg-purple-500 text-white" : "bg-purple-200 hover:bg-purple-300"} ${!isAutocomplete ? "opacity-50 cursor-not-allowed" : ""}`} onClick={handleAiHelp} disabled={!isAutocomplete}>AI Help</button>
           <button className={`px-3 py-1 bg-orange-200 rounded hover:bg-orange-300 mr-2 mb-2 ${!isAutocomplete ? "opacity-50 cursor-not-allowed" : ""}`} onClick={handleExplainCode} disabled={!isAutocomplete}>Explain Code</button>
           <button className={`px-3 py-1 rounded mr-2 mb-2 ${isDark ? "bg-teal-400 hover:bg-teal-500 text-white" : "bg-teal-200 hover:bg-teal-300"}`} onClick={() => setShowChatModal(true)}>Chat with AI</button>
+          <div className="text-xs mt-2 opacity-70">
+            {userId ? `User: ${userId.substring(0,6)}…` : "Not signed in (local only)"} • {isSaving ? "Saving…" : lastSavedAt ? `Saved at ${lastSavedAt.toLocaleTimeString()}` : "Unsaved"}
+          </div>
         </div>
       )}
       {isFullScreen ? (
