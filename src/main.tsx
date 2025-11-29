@@ -168,7 +168,7 @@ const router = createBrowserRouter(
       ),
     },
     {
-      path: "/fos",
+      path: "/foe",
       element: (
         <>
           <Codexe />
