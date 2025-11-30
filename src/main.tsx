@@ -169,7 +169,7 @@ const router = createBrowserRouter(
       ),
     },
     {
-      path: "/foe",
+      path: "/fos",
       element: (
         <>
           <HtmlCssJsCompiler />

@@ -48,37 +48,3 @@ export default tseslint.config({
   },
 })
 ```
-
-## Playground Persistence
-
-The HTML/CSS/JS and C playgrounds support per-user persistence:
-
-- Authenticated users (Firebase Auth) are saved to Firestore:
-  - `playgrounds_htmlcssjs/{uid}` → `{ html, css, js, updatedAt }`
-  - `playgrounds_c/{uid}` → `{ files[], flags[], activeFile, preset, updatedAt }`
-- Guests fall back to `localStorage` keys (`lcj_html`, `c_files`, etc.).
-- Autosave after 2s inactivity; `Ctrl+S` forces immediate save (and compile/run for C) plus preview refresh.
-- Status indicator shows user (truncated), saving state, and last saved time.
-
-### Extending
-Add more fields (e.g. description, tags) by modifying `src/lib/persistence.ts` and extending Firestore docs.
-
-### Firestore Security Rules (example)
-```
-rules_version = '2';
-service cloud.firestore {
-  match /databases/{database}/documents {
-    match /playgrounds_htmlcssjs/{userId} {
-      allow read, write: if request.auth != null && request.auth.uid == userId;
-    }
-    match /playgrounds_c/{userId} {
-      allow read, write: if request.auth != null && request.auth.uid == userId;
-    }
-  }
-}
-```
-
-### Notes
-- Ensure environment variables for Firebase are provided (Vite exposes those prefixed with `VITE_...`).
-- Consider quota checks for file count & size.
-- For large projects store file blobs in Cloud Storage and keep metadata in Firestore.

@@ -1,7 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
-import { onAuthStateChanged } from "firebase/auth";
-import { auth } from "@/firebase.config";
-import { loadCPlayground, saveCPlayground, loadLocalC, saveLocalC } from "@/lib/persistence";
+import React, { useState, useRef } from "react";
 import Editor from "@monaco-editor/react";
 import type { editor } from "monaco-editor";
 
@@ -30,9 +27,6 @@ const CCompiler: React.FC = () => {
   const [preset, setPreset] = useState(compilePresets[0].name);
   const [showAdvanced, setShowAdvanced] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
-  const [userId, setUserId] = useState<string | null>(null);
-  const [isSaving, setIsSaving] = useState(false);
-  const [lastSavedAt, setLastSavedAt] = useState<Date | null>(null);
 
   const editorOptions: editor.IStandaloneEditorConstructionOptions = {
     fontSize: 14,
@@ -76,73 +70,11 @@ const CCompiler: React.FC = () => {
     files.forEach(f => dl(f.name, f.content, "text/x-c"));
   };
 
-  // Auth & initial load
-  useEffect(() => {
-    const unsub = onAuthStateChanged(auth, async (user) => {
-      setUserId(user ? user.uid : null);
-      if (user) {
-        const remote = await loadCPlayground(user.uid);
-        if (remote) {
-          setFiles(remote.files);
-          setFlags(remote.flags);
-          setActiveFile(remote.activeFile);
-          setPreset(remote.preset);
-        } else {
-          const local = loadLocalC();
-          if (local) {
-            setFiles(local.files);
-            setFlags(local.flags);
-            setActiveFile(local.activeFile);
-            setPreset(local.preset);
-          }
-        }
-      } else {
-        const local = loadLocalC();
-        if (local) {
-          setFiles(local.files);
-          setFlags(local.flags);
-          setActiveFile(local.activeFile);
-          setPreset(local.preset);
-        }
-      }
-    });
-    return () => unsub();
-  }, []);
-
-  // Debounced autosave (2s)
-  useEffect(() => {
-    const handle = setTimeout(async () => {
-      const payload = { files, flags, activeFile, preset };
-      if (userId) {
-        setIsSaving(true);
-        await saveCPlayground(userId, payload);
-        setIsSaving(false);
-        setLastSavedAt(new Date());
-      } else {
-        saveLocalC(payload);
-        setLastSavedAt(new Date());
-      }
-    }, 2000);
-    return () => clearTimeout(handle);
-  }, [files, flags, activeFile, preset, userId]);
-
-  // Ctrl+S manual save + compile/run
-  useEffect(() => {
+  // Ctrl+S to save and run (compile then run)
+  React.useEffect(() => {
     const handler = (e: KeyboardEvent) => {
       if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "s") {
         e.preventDefault();
-        const payload = { files, flags, activeFile, preset };
-        (async () => {
-          if (userId) {
-            setIsSaving(true);
-            await saveCPlayground(userId, payload);
-            setIsSaving(false);
-            setLastSavedAt(new Date());
-          } else {
-            saveLocalC(payload);
-            setLastSavedAt(new Date());
-          }
-        })();
         compile();
         // slight delay to simulate compile then run
         setTimeout(() => runProgram(), 50);
@@ -150,7 +82,7 @@ const CCompiler: React.FC = () => {
     };
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
-  }, [files, flags, activeFile, preset, userId]);
+  }, [files]);
 
   const removeFile = (name: string) => {
     if (files.length <= 1) return;
@@ -216,9 +148,6 @@ const CCompiler: React.FC = () => {
           <button className="px-3 py-1 bg-green-500 text-white rounded hover:bg-green-600" onClick={() => runProgram()}>Run</button>
           <button className="px-3 py-1 bg-indigo-500 text-white rounded hover:bg-indigo-600" onClick={downloadSeparate}>Download Files</button>
           <button className="px-3 py-1 bg-purple-500 text-white rounded hover:bg-purple-600" onClick={() => setShowAdvanced(x => !x)}>{showAdvanced ? "Basic" : "Advanced"}</button>
-          <div className="text-xs self-center opacity-70">
-            {userId ? `User: ${userId.substring(0,6)}…` : 'Guest'} • {isSaving ? 'Saving…' : lastSavedAt ? `Saved ${lastSavedAt.toLocaleTimeString()}` : 'Unsaved'}
-          </div>
         </div>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">

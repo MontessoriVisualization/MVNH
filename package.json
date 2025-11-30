@@ -9,6 +9,7 @@
     "lint": "eslint .",
     "predeploy": "npm run build",
     "build": "tsc -b && vite build",
+    "postbuild": "node scripts/spa-404.cjs",
     "deploy": "gh-pages -d dist",
     "preview": "vite preview"
   },
