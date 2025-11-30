@@ -21,7 +21,7 @@ const Hero: React.FC = () => {
         </Button>
       </div>
       <div className="max-w-[609px]">
-        <img src={hello} alt="" className="w-full h-auto" />
+        <img src={hello} alt="" className="w-full h-auto brightness-[103%]" />
       </div>
     </div>
   );

@@ -22,11 +22,7 @@ const FaqsData = [
     subtitle:
       "If you have impressive skills in any computer field you can join us and contribute to our project.",
   },
-  {
-    title: "What does MVNH stand for?",
-    subtitle:
-      "MVNH stands for Montessori Visualization NEB Hub. It is a project done By Montessori Visualization a club.",
-  },
+
   {
     title: "What new feature will be added in future?",
     subtitle:

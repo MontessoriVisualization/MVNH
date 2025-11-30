@@ -13,7 +13,7 @@ const CatData = [
     ],
     icon: <CalendarDays />,
     colors: "bg-blue-100",
-    inde: 11,
+    inde: 'class11',
   },
   {
     title: "Class 12",
@@ -25,7 +25,7 @@ const CatData = [
     ],
     icon: <NotebookPenIcon />,
     colors: "bg-green-100",
-    inde: 12,
+    inde: 'class12',
   },
   {
     title: "Past Year Question",
@@ -35,7 +35,7 @@ const CatData = [
     ],
     icon: <BookMarkedIcon />,
     colors: "bg-red-100",
-    inde: 13,
+    inde: 'pastyear',
   },
 ];
 

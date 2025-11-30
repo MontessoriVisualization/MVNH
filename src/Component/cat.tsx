@@ -4,7 +4,7 @@ import Button from "./button";
 import { Link } from "react-router-dom";
 
 interface CategoriesProps {
-  inde: number;
+  inde: string;
   title: string;
   icon: React.ReactNode;
   features: {
@@ -37,7 +37,7 @@ const List: React.FC<CategoriesProps> = ({
           ))}
         </div>
         <div>
-          <Link to={`class${inde}`}>
+          <Link to={`${inde}`}>
             <Button variant={"ghost"} className="flex border-0">
               Export Category <ArrowRight />
             </Button>
