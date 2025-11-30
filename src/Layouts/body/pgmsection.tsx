@@ -1,6 +1,6 @@
 import React from "react";
 import Cat from "../../Component/cat";
-import { FaGlobe, FaBolt, FaLaptopCode, FaPython, FaReact, FaSitemap } from "react-icons/fa";
+import { FaGlobe, FaLaptopCode, FaPython, FaReact, FaSitemap } from "react-icons/fa";
 
 type Feature = { name: string; link: string };
 type Card = {
