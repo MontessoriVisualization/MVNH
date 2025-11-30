@@ -3,6 +3,8 @@ import Footer from "../../Component/Footer";
 import Logo from "./logo.svg";
 import { Linkedin, Twitter, Facebook, Instagram, Youtube } from "lucide-react";
 import Button from "../../Component/button";
+import { PiTiktokLogo } from "react-icons/pi";
+
 
 const FooterData = [
   {
@@ -62,21 +64,32 @@ const FooterGrid: React.FC = () => {
       </div>
       <div className="justify-center flex flex-col gap-4">
         <div className="flex justify-center items-center before:h-0.5 before:w-72 before:bg-gray-400 after:h-0.5 after:w-72 after:bg-gray-400">
+          <a href="https://www.linkedin.com/in/montessori-visualization/" target="_blank" rel="noopener noreferrer">
           <Button size={"fticon"} variant={"fticon"}>
             <Linkedin className="w-8 h-8" />
           </Button>
-          <Button size={"fticon"} variant={"fticon"}>
-            <Twitter className="w-8 h-8" />
+          </a>
+
+          <a href="https://www.tiktok.com/@montessori.visualization" target="_blank" rel="noopener noreferrer">
+                    <Button size={"fticon"} variant={"fticon"}>
+            <PiTiktokLogo className="w-8 h-8" />
           </Button>
+          </a>
+          <a href="https://www.facebook.com/share/17dPKYf3WV/" target="_blank" rel="noopener noreferrer">
           <Button size={"fticon"} variant={"fticon"}>
             <Facebook className="w-8 h-8" />
           </Button>
+          </a>
+          <a href="https://www.instagram.com/montessorivisualization" target="_blank" rel="noopener noreferrer">
           <Button size={"fticon"} variant={"fticon"}>
             <Instagram className="w-8 h-8" />
           </Button>
-          <Button size={"fticon"} variant={"fticon"}>
+          </a>
+          <a href="https://www.youtube.com/@MontessoriVisualization" target="_blank" rel="noopener noreferrer">
+          <Button size={"fticon"} variant={"fticon"} >
             <Youtube className="w-9 h-9" />
           </Button>
+          </a>
         </div>
         <div className="w-full flex-col gap-2 flex items-center justify-center">
           <img src={Logo} alt="" className="text-green-300 fill-white" />

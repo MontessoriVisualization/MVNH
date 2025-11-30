@@ -1,5 +1,5 @@
 import Button from "../../Component/button";
-import hello from "./hello.webp";
+import hello from "./Gemini_Generated_Image_uw911juw911juw91.png";
 const Hero: React.FC = () => {
   return (
     <div className="flex flex-col md:flex-row md:justify-around items-center mx-auto px-7 md:mb-20">
@@ -20,8 +20,8 @@ const Hero: React.FC = () => {
           Get started
         </Button>
       </div>
-      <div>
-        <img src={hello} alt="" />
+      <div className="max-w-[609px]">
+        <img src={hello} alt="" className="w-full h-auto" />
       </div>
     </div>
   );
