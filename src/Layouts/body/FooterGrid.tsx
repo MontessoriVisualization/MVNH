@@ -1,7 +1,7 @@
 import React from "react";
 import Footer from "../../Component/Footer";
 import Logo from "./logo.svg";
-import { Linkedin, Twitter, Facebook, Instagram, Youtube } from "lucide-react";
+import { Linkedin, Facebook, Instagram, Youtube } from "lucide-react";
 import Button from "../../Component/button";
 import { PiTiktokLogo } from "react-icons/pi";
 
